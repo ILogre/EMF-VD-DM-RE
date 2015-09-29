@@ -1,0 +1,21 @@
+Dashboard WorkingProgress :
+
+	Visualizations :
+		CorridorNoiseImpact shows WhatQualifier {concern Over_time}, WhatQualifier {concern Comparison}, WhatQualifier {concern Range} }
+		Source door {concerns {Property {value Discrete}}}}
+	
+		Positioning :
+		Window summer {
+			organizes {
+				Column {
+					ponderation 1
+					contains {
+						Cell{
+							wraps CorridorNoiseImpact
+						}
+					}
+				}
+			}
+		}
+
+

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/sensorDeploymentLanguage.Model/src" modelPluginID="sensorDeploymentLanguage.Model"
+    modelName="SensorDeploymentLanguage" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>sensorDeploymentLanguage.ecore</foreignModel>
+  <genPackages prefix="SensorDeploymentLanguage" disposableProviderFactory="true"
+      ecorePackage="sensorDeploymentLanguage.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="sensorDeploymentLanguage.ecore#//ContainerType">
+      <genEnumLiterals ecoreEnumLiteral="sensorDeploymentLanguage.ecore#//ContainerType/Building"/>
+      <genEnumLiterals ecoreEnumLiteral="sensorDeploymentLanguage.ecore#//ContainerType/Floor"/>
+      <genEnumLiterals ecoreEnumLiteral="sensorDeploymentLanguage.ecore#//ContainerType/Corridor"/>
+      <genEnumLiterals ecoreEnumLiteral="sensorDeploymentLanguage.ecore#//ContainerType/Room"/>
+      <genEnumLiterals ecoreEnumLiteral="sensorDeploymentLanguage.ecore#//ContainerType/Furniture"/>
+      <genEnumLiterals ecoreEnumLiteral="sensorDeploymentLanguage.ecore#//ContainerType/Wall"/>
+      <genEnumLiterals ecoreEnumLiteral="sensorDeploymentLanguage.ecore#//ContainerType/Window"/>
+    </genEnums>
+    <genClasses ecoreClass="sensorDeploymentLanguage.ecore#//Catalog">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sensorDeploymentLanguage.ecore#//Catalog/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sensorDeploymentLanguage.ecore#//Catalog/records"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sensorDeploymentLanguage.ecore#//Catalog/patterns"/>
+    </genClasses>
+    <genClasses ecoreClass="sensorDeploymentLanguage.ecore#//Container">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sensorDeploymentLanguage.ecore#//Container/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sensorDeploymentLanguage.ecore#//Container/contains"/>
+    </genClasses>
+    <genClasses ecoreClass="sensorDeploymentLanguage.ecore#//Containable"/>
+    <genClasses ecoreClass="sensorDeploymentLanguage.ecore#//Sensor">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sensorDeploymentLanguage.ecore#//Sensor/observes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sensorDeploymentLanguage.ecore#//Sensor/calculatedFrom"/>
+    </genClasses>
+    <genClasses ecoreClass="sensorDeploymentLanguage.ecore#//Periodic">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sensorDeploymentLanguage.ecore#//Periodic/period"/>
+    </genClasses>
+    <genClasses ecoreClass="sensorDeploymentLanguage.ecore#//Event_Based">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sensorDeploymentLanguage.ecore#//Event_Based/trigger"/>
+    </genClasses>
+    <genClasses ecoreClass="sensorDeploymentLanguage.ecore#//Observation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sensorDeploymentLanguage.ecore#//Observation/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sensorDeploymentLanguage.ecore#//Observation/time"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sensorDeploymentLanguage.ecore#//Observation/values"/>
+    </genClasses>
+    <genClasses ecoreClass="sensorDeploymentLanguage.ecore#//Field">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sensorDeploymentLanguage.ecore#//Field/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sensorDeploymentLanguage.ecore#//Field/range"/>
+    </genClasses>
+    <genClasses ecoreClass="sensorDeploymentLanguage.ecore#//Range"/>
+    <genClasses ecoreClass="sensorDeploymentLanguage.ecore#//Continuous">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sensorDeploymentLanguage.ecore#//Continuous/min"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sensorDeploymentLanguage.ecore#//Continuous/max"/>
+    </genClasses>
+    <genClasses ecoreClass="sensorDeploymentLanguage.ecore#//Discrete">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sensorDeploymentLanguage.ecore#//Discrete/values"/>
+    </genClasses>
+    <genClasses ecoreClass="sensorDeploymentLanguage.ecore#//DataType"/>
+    <genClasses ecoreClass="sensorDeploymentLanguage.ecore#//Integer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sensorDeploymentLanguage.ecore#//Integer/value"/>
+    </genClasses>
+    <genClasses ecoreClass="sensorDeploymentLanguage.ecore#//Float">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sensorDeploymentLanguage.ecore#//Float/value"/>
+    </genClasses>
+    <genClasses ecoreClass="sensorDeploymentLanguage.ecore#//String">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sensorDeploymentLanguage.ecore#//String/value"/>
+    </genClasses>
+    <genClasses ecoreClass="sensorDeploymentLanguage.ecore#//Atomic"/>
+    <genClasses ecoreClass="sensorDeploymentLanguage.ecore#//Calculated">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sensorDeploymentLanguage.ecore#//Calculated/function"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sensorDeploymentLanguage.ecore#//Calculated/operands"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

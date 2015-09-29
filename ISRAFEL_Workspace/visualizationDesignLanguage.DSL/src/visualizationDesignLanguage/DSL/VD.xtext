@@ -9,45 +9,35 @@ Dashboard returns Dashboard:
 
 		'Visualizations :'
 			visualizations+=Visualization
-			("\n" visualizations+=Visualization)*
+			(visualizations+=Visualization)*
 		
 		'Positioning :'
 			windows+=Window
-			("\n" windows+=Window)* 
+			(windows+=Window)* 
 	;
 	
 Visualization returns Visualization:
-	{Visualization}
-	name=EString ('shows' concerns+=WhatQualifier ( "," concerns+=WhatQualifier)* '}' )?
-	(displays+=Source ( "," displays+=Source)* )?;
+	name=EString ('shows' concerns+=WhatQualifier ( "," concerns+=WhatQualifier)* )?
+	'of' displays+=Source ( ";" displays+=Source)* (';')?;
 	
 WhatQualifier returns WhatQualifier:
 	concern=Taxonomy;
 
 Source returns Source:
-	{Source}
-	'of' name=EString (concerns+=HowQualifier ( "," concerns+=HowQualifier)* )?;
+	name=EString 'displayed as' (concerns+=HowQualifier ( "," concerns+=HowQualifier)* )?;
 
 HowQualifier returns HowQualifier:
-	Icon | Colorization | Property | Threshold;
+	(Icon | Colorization | Property | Threshold);
 	
 Window returns Window:
 	'view' name=EString ':'
 	organizes+=Container ( "   |   " organizes+=Container)*;
 
 Container returns Container:
-	Column | Line;
+	('Column' {Column} | 'Line' {Line}) ('sized' ponderation=EInt)? ': [' contains+=Cell ( ";" contains+=Cell)* ']';
 
 Cell returns Cell:
-	'['wraps=[Visualization]']';
-
-Column returns Column:
-	'Column' ('sized' ponderation=EInt)? ":"
-	contains+=Cell
-	("\n" contains+=Cell)*;
-
-Line returns Line:
-	'Line' ('sized' ponderation=EInt)? ': [' contains+=Cell ( ";" contains+=Cell)* ']';
+	wraps=[Visualization];
 
 Icon returns Icon:
 	{Icon}
@@ -58,7 +48,6 @@ Colorization returns Colorization:
 	'Color' color=EString;
 
 Property returns Property:
-	{Property}
 	value=DataProperty;
 
 Threshold returns Threshold:

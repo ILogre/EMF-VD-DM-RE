@@ -1,21 +1,62 @@
 Dashboard WorkingProgress :
 
 	Visualizations :
-		CorridorNoiseImpact shows WhatQualifier {concern Over_time}, WhatQualifier {concern Comparison}, WhatQualifier {concern Range} }
-		Source door {concerns {Property {value Discrete}}}}
+		MiniMap shows Location
+		of office443sensors displayed as Icon
+		
+		RawValues
+		of	indoorTemperature displayed as Scalar; doorStatus displayed as Scalar; windowStatus displayed as Scalar
+		
+		CorridorNoiseImpact shows Over_time, Comparison, Range
+		of	door displayed as Discrete; corridorNoise displayed as Continuous, Threshold (max 500)
+		
+		DoorDailyState shows Proportion, Part_to_a_whole
+		of	door displayed as Structural
+		
+		OutsideNoiseImpact shows Over_time, Comparison, Range
+		of	window displayed as Discrete; outsideNoise displayed as Continuous, Threshold (max 500)
+		
+		WindowDailyState shows Proportion, Part_to_a_whole
+		of	window displayed as Structural
+		
+		DoorDailyActivity shows Over_time, Distribution
+		of	doorOpened displayed as Color green; doorClosed displayed as Color red
+		
+		WindowDailyActivity shows Over_time, Distribution
+		of	windowOpened displayed as Color green; windowClosed displayed as Color red
+		
+		OfficeHeating shows Comparison, Relationship, Over_time, Proportion
+		of indoorTemperature displayed as Continuous; outsideTemperature displayed as Continuous; radiator displayed as Color green, Color red
+		
+		EnergyWaste shows Comparison, Relationship, Over_time
+		of window_openning displayed as Discrete; airConditionningStatus displayed as Discrete
+		
+		OfficeCooling shows Comparison, Over_time
+		of indoorTemperature displayed as Continuous, Threshold (min 19 max 29); outsideTemperature displayed as Continuous
+		
+		AirConditioningState
+		of airConditioning displayed as Structural, Color green, Color red
+		
+		LightState
+		of light displayed as Structural, Color green, Color red
+		
+		RadiatorState
+		of radiator displayed as Structural, Color green, Color red
+		
+		WindowState
+		of window displayed as Structural, Color green, Color red
+		
 	
 		Positioning :
-		Window summer {
-			organizes {
-				Column {
-					ponderation 1
-					contains {
-						Cell{
-							wraps CorridorNoiseImpact
-						}
-					}
-				}
-			}
-		}
-
-
+		view overview :
+		Column sized 1 : [ RawValues ]   |   Column sized 2 : [ MiniMap ]
+		
+		view surrounding :
+		Column : [ CorridorNoiseImpact; DoorDailyState; DoorDailyActivity ]   |   Column : [ OutsideNoiseImpact; WindowState; WindowDailyActivity ]
+		
+		view summer :
+		Line sized 1 : [AirConditioningState; WindowDailyState]   |   Line sized 3: [EnergyWaste]
+		
+		view winter :
+		Line sized 1 : [RadiatorState;LightState]   |   Line sized 3 : [OfficeHeating]
+		

@@ -25,7 +25,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sensorDeploymentLanguage.ecore#//Container/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sensorDeploymentLanguage.ecore#//Container/contains"/>
     </genClasses>
-    <genClasses ecoreClass="sensorDeploymentLanguage.ecore#//Containable"/>
+    <genClasses ecoreClass="sensorDeploymentLanguage.ecore#//Containable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sensorDeploymentLanguage.ecore#//Containable/name"/>
+    </genClasses>
     <genClasses ecoreClass="sensorDeploymentLanguage.ecore#//Sensor">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sensorDeploymentLanguage.ecore#//Sensor/observes"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sensorDeploymentLanguage.ecore#//Sensor/calculatedFrom"/>

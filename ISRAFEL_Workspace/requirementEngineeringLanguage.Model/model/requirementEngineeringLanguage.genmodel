@@ -33,7 +33,7 @@
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="requirementEngineeringLanguage.ecore#//Reaction">
       <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Reaction/Synchronization"/>
-      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Reaction/Go%20to"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Reaction/GoTo"/>
     </genEnums>
     <genClasses ecoreClass="requirementEngineeringLanguage.ecore#//Scenario">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute requirementEngineeringLanguage.ecore#//Scenario/name"/>
@@ -45,7 +45,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute requirementEngineeringLanguage.ecore#//Given/dashboard"/>
     </genClasses>
     <genClasses ecoreClass="requirementEngineeringLanguage.ecore#//When">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference requirementEngineeringLanguage.ecore#//When/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference requirementEngineeringLanguage.ecore#//When/appliesOn"/>
     </genClasses>
     <genClasses ecoreClass="requirementEngineeringLanguage.ecore#//Then"/>
     <genClasses ecoreClass="requirementEngineeringLanguage.ecore#//Loading">

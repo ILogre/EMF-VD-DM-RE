@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="requirementEngineeringLanguage" nsURI="http://www.example.org/requirementEngineering"
-    nsPrefix="fr.uns.i3s.sparks.modalis.israfel.requirementengineeringlanguage">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="requirementEngineeringLanguage" nsURI="fr.uns.i3s.sparks.modalis.israfel.requirementengineeringlanguage"
+    nsPrefix="requirementEngineeringLanguage">
   <eClassifiers xsi:type="ecore:EClass" name="Scenario">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
@@ -17,7 +17,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="When" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="appliesOn" lowerBound="1"
         eType="#//View"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Then" abstract="true"/>
@@ -56,7 +56,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Reaction">
     <eLiterals name="Synchronization"/>
-    <eLiterals name="Go to" value="1"/>
+    <eLiterals name="GoTo" value="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="View">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/requirementEngineeringLanguage.Model/src" modelPluginID="requirementEngineeringLanguage.Model"
+    modelName="RequirementEngineeringLanguage" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>requirementEngineeringLanguage.ecore</foreignModel>
+  <genPackages prefix="RequirementEngineeringLanguage" disposableProviderFactory="true"
+      ecorePackage="requirementEngineeringLanguage.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="requirementEngineeringLanguage.ecore#//Taxonomy">
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Taxonomy/Proportion"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Taxonomy/Location"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Taxonomy/Comparison"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Taxonomy/Part_to_a_whole"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Taxonomy/Relationship"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Taxonomy/Over_time"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Taxonomy/Distribution"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Taxonomy/Hierarchy"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Taxonomy/Reference_tool"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Taxonomy/Range"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Taxonomy/Pattern"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="requirementEngineeringLanguage.ecore#//State">
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//State/Over"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//State/Current"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//State/Expected"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="requirementEngineeringLanguage.ecore#//Action">
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Action/next"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Action/previous"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Action/range"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Action/element"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="requirementEngineeringLanguage.ecore#//Reaction">
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Reaction/Synchronization"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Reaction/Go%20to"/>
+    </genEnums>
+    <genClasses ecoreClass="requirementEngineeringLanguage.ecore#//Scenario">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute requirementEngineeringLanguage.ecore#//Scenario/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference requirementEngineeringLanguage.ecore#//Scenario/system"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference requirementEngineeringLanguage.ecore#//Scenario/trigger"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference requirementEngineeringLanguage.ecore#//Scenario/outcome"/>
+    </genClasses>
+    <genClasses ecoreClass="requirementEngineeringLanguage.ecore#//Given">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute requirementEngineeringLanguage.ecore#//Given/dashboard"/>
+    </genClasses>
+    <genClasses ecoreClass="requirementEngineeringLanguage.ecore#//When">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference requirementEngineeringLanguage.ecore#//When/target"/>
+    </genClasses>
+    <genClasses ecoreClass="requirementEngineeringLanguage.ecore#//Then"/>
+    <genClasses ecoreClass="requirementEngineeringLanguage.ecore#//Loading">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute requirementEngineeringLanguage.ecore#//Loading/new"/>
+    </genClasses>
+    <genClasses ecoreClass="requirementEngineeringLanguage.ecore#//Interaction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute requirementEngineeringLanguage.ecore#//Interaction/action"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute requirementEngineeringLanguage.ecore#//Interaction/target"/>
+    </genClasses>
+    <genClasses ecoreClass="requirementEngineeringLanguage.ecore#//View">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute requirementEngineeringLanguage.ecore#//View/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute requirementEngineeringLanguage.ecore#//View/desc"/>
+    </genClasses>
+    <genClasses ecoreClass="requirementEngineeringLanguage.ecore#//Project">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute requirementEngineeringLanguage.ecore#//Project/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference requirementEngineeringLanguage.ecore#//Project/view"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference requirementEngineeringLanguage.ecore#//Project/consistOf"/>
+    </genClasses>
+    <genClasses ecoreClass="requirementEngineeringLanguage.ecore#//Update">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute requirementEngineeringLanguage.ecore#//Update/do"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference requirementEngineeringLanguage.ecore#//Update/target"/>
+    </genClasses>
+    <genClasses ecoreClass="requirementEngineeringLanguage.ecore#//Goal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute requirementEngineeringLanguage.ecore#//Goal/function"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute requirementEngineeringLanguage.ecore#//Goal/data"/>
+    </genClasses>
+    <genClasses ecoreClass="requirementEngineeringLanguage.ecore#//Feature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute requirementEngineeringLanguage.ecore#//Feature/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute requirementEngineeringLanguage.ecore#//Feature/desc"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference requirementEngineeringLanguage.ecore#//Feature/specifiedBy"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

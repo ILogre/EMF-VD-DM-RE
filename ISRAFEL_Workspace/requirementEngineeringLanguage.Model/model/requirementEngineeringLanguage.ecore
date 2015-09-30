@@ -5,19 +5,18 @@
   <eClassifiers xsi:type="ecore:EClass" name="Scenario">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="system" lowerBound="1"
-        eType="#//Given" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="trigger" lowerBound="1"
         upperBound="-1" eType="#//When" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outcome" lowerBound="1"
         upperBound="-1" eType="#//Then" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="system" eType="#//Given"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Given">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dashboard" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="given" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="When" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="appliesOn" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" lowerBound="1"
         eType="#//View"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Then" abstract="true"/>
@@ -45,8 +44,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Interaction" eSuperTypes="#//When">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="action" lowerBound="1"
         eType="#//Action"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="target" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="target" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Action">
     <eLiterals name="next"/>
@@ -66,10 +64,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Project">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="view" lowerBound="1" upperBound="-1"
-        eType="#//View" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="consistOf" lowerBound="1"
         upperBound="-1" eType="#//Feature" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="background" lowerBound="1"
+        upperBound="-1" eType="#//Background" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Update" eSuperTypes="#//Then">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="do" lowerBound="1" eType="#//Reaction"/>
@@ -87,5 +85,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="desc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="specifiedBy" lowerBound="1"
         upperBound="-1" eType="#//Scenario" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Background">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dashboard" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="view" lowerBound="1" upperBound="-1"
+        eType="#//View" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

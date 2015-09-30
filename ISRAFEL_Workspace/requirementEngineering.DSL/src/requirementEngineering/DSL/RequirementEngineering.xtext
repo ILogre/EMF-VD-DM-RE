@@ -5,91 +5,66 @@ import "fr.uns.i3s.sparks.modalis.israfel.requirementengineeringlanguage"
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 Project returns Project:
-	'Project'
-	name=EString
-	'{'
-		'view' '{' view+=View ( "," view+=View)* '}' 
-		'consistOf' '{' consistOf+=Feature ( "," consistOf+=Feature)* '}' 
-	'}';
+	'Project:' name=EString 
+	'Background:'
+	background+=Background
+	(background+=Background)*
+	
+	consistOf+=Feature
+	(consistOf+=Feature)*;
 
+Background returns Background:
+	'Given dashboard' dashboard=EString 'with views'
+		view+=View
+		(view+=View)*;
 
+View returns View:
+	{View}
+	name=EString ('to' desc=EString)?;
 
+Feature returns Feature:
+	'Feature:' name=EString ('in order to' desc=EString)?
+	
+	specifiedBy+=Scenario
+	(specifiedBy+=Scenario)*;
 
+Scenario returns Scenario:
+	'Scenario:' name=EString
+	('Given' system=Given)?
+	'When' trigger+=When
+	( "And" trigger+=When)*
+	'Then' outcome+=Then
+	( "And" outcome+=Then)*;
+
+Given returns Given:
+	'Given' given=EString;
 
 When returns When:
 	Loading | Interaction;
 
+Loading returns Loading:
+	context=[View|EString] 'is' new=State;
+
+Interaction returns Interaction:
+	action=Action (target=EString)? 'is selected in' context=[View|EString];
+
 Then returns Then:
 	Update | Goal;
 
+Update returns Update:
+	target=[View|EString] 'is' do=Reaction;
+
+Goal returns Goal:
+	'it is possible to see ' function=Taxonomy ('on' data+=EString ( "," data+=EString)* )?;
+
 EString returns ecore::EString:
 	STRING | ID;
-
-View returns View:
-	{View}
-	'View'
-	name=EString
-	'{'
-		('desc' desc=EString)?
-	'}';
-
-Feature returns Feature:
-	'Feature'
-	name=EString
-	'{'
-		('desc' desc=EString)?
-		'specifiedBy' '{' specifiedBy+=Scenario ( "," specifiedBy+=Scenario)* '}' 
-	'}';
-
-Scenario returns Scenario:
-	'Scenario'
-	name=EString
-	'{'
-		'system' system=Given
-		'trigger' '{' trigger+=When ( "," trigger+=When)* '}' 
-		'outcome' '{' outcome+=Then ( "," outcome+=Then)* '}' 
-	'}';
-
-Given returns Given:
-	'Given'
-	'{'
-		'dashboard' dashboard=EString
-	'}';
-
-Loading returns Loading:
-	'Loading'
-	'{'
-		'new' new=State
-		'appliesOn' appliesOn=[View|EString]
-	'}';
-
-Interaction returns Interaction:
-	'Interaction'
-	'{'
-		'action' action=Action
-		'target' target=EString
-		'appliesOn' appliesOn=[View|EString]
-	'}';
 
 enum State returns State:
 				Over = 'Over' | Current = 'Current' | Expected = 'Expected';
 
 enum Action returns Action:
 				next = 'next' | previous = 'previous' | range = 'range' | element = 'element';
-
-Update returns Update:
-	'Update'
-	'{'
-		'do' do=Reaction
-		'target' target=[View|EString]
-	'}';
-
-Goal returns Goal:
-	'Goal'
-	'{'
-		'function' function=Taxonomy
-		('data' '{' data+=EString ( "," data+=EString)* '}' )?
-	'}';
 
 enum Reaction returns Reaction:
 				Synchronization = 'Synchronization' | GoTo = 'GoTo';

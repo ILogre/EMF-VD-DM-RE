@@ -46,7 +46,7 @@ Loading returns Loading:
 	context=[View|EString] 'is' new=State;
 
 Interaction returns Interaction:
-	action=Action (target=EString)? 'is selected in' context=[View|EString];
+	action=Action (target=EString)? 'selected in' context=[View|EString];
 
 Then returns Then:
 	Update | Goal;
@@ -67,7 +67,7 @@ enum Action returns Action:
 				next = 'next' | previous = 'previous' | range = 'range' | element = 'element';
 
 enum Reaction returns Reaction:
-				Synchronization = 'Synchronization' | GoTo = 'GoTo';
+				Synchronization = 'Synchronization' | GoTo = 'GoTo' | Enable = 'Enable' | Disable = 'Disable' ;
 
 enum Taxonomy returns Taxonomy:
 				Proportion = 'Proportion' | Location = 'Location' | Comparison = 'Comparison' | Part_to_a_whole = 'Part_to_a_whole' | Relationship = 'Relationship' | Over_time = 'Over_time' | Distribution = 'Distribution' | Hierarchy = 'Hierarchy' | Reference_tool = 'Reference_tool' | Range = 'Range' | Pattern = 'Pattern';

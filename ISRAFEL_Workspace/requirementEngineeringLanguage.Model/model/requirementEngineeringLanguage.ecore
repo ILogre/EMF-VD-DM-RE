@@ -55,6 +55,8 @@
   <eClassifiers xsi:type="ecore:EEnum" name="Reaction">
     <eLiterals name="Synchronization"/>
     <eLiterals name="GoTo" value="1"/>
+    <eLiterals name="Enable" value="2"/>
+    <eLiterals name="Disable" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="View">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"

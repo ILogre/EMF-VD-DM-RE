@@ -34,6 +34,8 @@
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="requirementEngineeringLanguage.ecore#//Reaction">
       <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Reaction/Synchronization"/>
       <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Reaction/GoTo"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Reaction/Enable"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Reaction/Disable"/>
     </genEnums>
     <genClasses ecoreClass="requirementEngineeringLanguage.ecore#//Scenario">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute requirementEngineeringLanguage.ecore#//Scenario/name"/>

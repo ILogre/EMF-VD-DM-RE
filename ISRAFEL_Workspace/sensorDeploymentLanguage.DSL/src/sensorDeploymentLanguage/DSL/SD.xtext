@@ -17,7 +17,7 @@ Catalog returns Catalog:
 
 Container returns Container:
 	type=ContainerType name=EString
-	('⌞' contains+=Containable)+ '□';
+	('⌞' contains+=Containable)* '□';
 
 Containable returns Containable:
 	Container | Periodic | Event_Based;

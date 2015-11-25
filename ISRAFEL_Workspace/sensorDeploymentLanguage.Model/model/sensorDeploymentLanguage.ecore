@@ -12,8 +12,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Container" eSuperTypes="#//Containable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ContainerType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="contains" lowerBound="1"
-        upperBound="-1" eType="#//Containable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contains" upperBound="-1"
+        eType="#//Containable" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ContainerType">
     <eLiterals name="Building"/>

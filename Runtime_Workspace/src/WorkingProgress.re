@@ -23,3 +23,9 @@ Scenario: 'If snowflake'
 When winter is Current
 Then summer is Disable
 
+Feature: interaction in order to 'handle the behavior between visualization'
+
+Scenario: 'Synchronization of time'
+When range time selected in surounding
+Then surounding is Synchronization
+

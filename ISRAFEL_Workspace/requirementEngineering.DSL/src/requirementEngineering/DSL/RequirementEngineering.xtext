@@ -37,7 +37,20 @@ Scenario returns Scenario:
 	( "And" outcome+=Then)*;
 
 Given returns Given:
-	'Given' given=EString;
+	'Given' dashboard=EString (' with available data' data+=Data ( "," data+=Data)* )? ;
+	
+Data returns Data:
+	{Data}
+	(quantifier=Quantifier)? ('type' type=DataType)? ('located in' locationType=ContainerType location=EString)?;
+
+enum DataType returns DataType:
+				Temperature = 'Temperature' | Luminosity = 'Luminosity' | Humidity = 'Humidity' | Cardiac_frequency = 'Cardiac_frequency' | Occupancy = 'Occupancy' | Pressure = 'Pressure';
+
+enum ContainerType returns ContainerType:
+				Building = 'Building' | Floor = 'Floor' | Corridor = 'Corridor' | Room = 'Room' | Furniture = 'Furniture' | Wall = 'Wall' | Window = 'Window';
+
+enum Quantifier returns Quantifier:
+				All = 'All' | Some = 'Some' | One = 'One';
 
 When returns When:
 	Loading | Interaction;
@@ -67,7 +80,7 @@ enum Action returns Action:
 				next = 'next' | previous = 'previous' | range = 'range' | element = 'element';
 
 enum Reaction returns Reaction:
-				Synchronization = 'Synchronization' | GoTo = 'GoTo' | Enable = 'Enable' | Disable = 'Disable' ;
+				Synchronize = 'Synchronize' | GoTo = 'GoTo' | Enable = 'Enable' | Disable = 'Disable' ;
 
 enum Taxonomy returns Taxonomy:
 				Proportion = 'Proportion' | Location = 'Location' | Comparison = 'Comparison' | Part_to_a_whole = 'Part_to_a_whole' | Relationship = 'Relationship' | Over_time = 'Over_time' | Distribution = 'Distribution' | Hierarchy = 'Hierarchy' | Reference_tool = 'Reference_tool' | Range = 'Range' | Pattern = 'Pattern';

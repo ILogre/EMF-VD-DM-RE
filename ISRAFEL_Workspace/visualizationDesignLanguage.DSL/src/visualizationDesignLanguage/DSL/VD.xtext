@@ -24,7 +24,7 @@ WhatQualifier returns WhatQualifier:
 	concern=Taxonomy;
 
 Source returns Source:
-	name=EString 'displayed as' (concerns+=HowQualifier ( "," concerns+=HowQualifier)* )?;
+	name=EString ('of type' type=EString)? ('locate at' location=EString)? 'displayed as' (concerns+=HowQualifier ( "," concerns+=HowQualifier)* )?;
 
 HowQualifier returns HowQualifier:
 	(Icon | Colorization | Property | Threshold);

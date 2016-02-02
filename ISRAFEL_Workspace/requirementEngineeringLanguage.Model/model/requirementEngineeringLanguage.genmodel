@@ -32,10 +32,32 @@
       <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Action/element"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="requirementEngineeringLanguage.ecore#//Reaction">
-      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Reaction/Synchronization"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Reaction/Synchronize"/>
       <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Reaction/GoTo"/>
       <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Reaction/Enable"/>
       <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Reaction/Disable"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="requirementEngineeringLanguage.ecore#//ContainerType">
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//ContainerType/Building"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//ContainerType/Floor"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//ContainerType/Corridor"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//ContainerType/Room"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//ContainerType/Furniture"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//ContainerType/Wall"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//ContainerType/Window"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="requirementEngineeringLanguage.ecore#//DataType">
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//DataType/Temperature"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//DataType/Luminosity"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//DataType/Humidity"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//DataType/Cardiac_frequency"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//DataType/Occupancy"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//DataType/Pressure"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="requirementEngineeringLanguage.ecore#//Quantifier">
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Quantifier/All"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Quantifier/Some"/>
+      <genEnumLiterals ecoreEnumLiteral="requirementEngineeringLanguage.ecore#//Quantifier/One"/>
     </genEnums>
     <genClasses ecoreClass="requirementEngineeringLanguage.ecore#//Scenario">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute requirementEngineeringLanguage.ecore#//Scenario/name"/>
@@ -44,7 +66,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference requirementEngineeringLanguage.ecore#//Scenario/system"/>
     </genClasses>
     <genClasses ecoreClass="requirementEngineeringLanguage.ecore#//Given">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute requirementEngineeringLanguage.ecore#//Given/given"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute requirementEngineeringLanguage.ecore#//Given/dashboard"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference requirementEngineeringLanguage.ecore#//Given/data"/>
     </genClasses>
     <genClasses ecoreClass="requirementEngineeringLanguage.ecore#//When">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference requirementEngineeringLanguage.ecore#//When/context"/>
@@ -82,6 +105,12 @@
     <genClasses ecoreClass="requirementEngineeringLanguage.ecore#//Background">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute requirementEngineeringLanguage.ecore#//Background/dashboard"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference requirementEngineeringLanguage.ecore#//Background/view"/>
+    </genClasses>
+    <genClasses ecoreClass="requirementEngineeringLanguage.ecore#//Data">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute requirementEngineeringLanguage.ecore#//Data/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute requirementEngineeringLanguage.ecore#//Data/locationType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute requirementEngineeringLanguage.ecore#//Data/quantifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute requirementEngineeringLanguage.ecore#//Data/location"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

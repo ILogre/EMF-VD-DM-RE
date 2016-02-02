@@ -13,7 +13,10 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Given">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="given" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dashboard" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" upperBound="-1" eType="#//Data"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="When" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="context" lowerBound="1"
@@ -53,7 +56,7 @@
     <eLiterals name="element" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Reaction">
-    <eLiterals name="Synchronization"/>
+    <eLiterals name="Synchronize"/>
     <eLiterals name="GoTo" value="1"/>
     <eLiterals name="Enable" value="2"/>
     <eLiterals name="Disable" value="3"/>
@@ -93,5 +96,33 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="view" lowerBound="1" upperBound="-1"
         eType="#//View" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ContainerType">
+    <eLiterals name="Building"/>
+    <eLiterals name="Floor" value="1"/>
+    <eLiterals name="Corridor" value="2"/>
+    <eLiterals name="Room" value="3"/>
+    <eLiterals name="Furniture" value="4"/>
+    <eLiterals name="Wall" value="5"/>
+    <eLiterals name="Window" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DataType">
+    <eLiterals name="Temperature"/>
+    <eLiterals name="Luminosity" value="1"/>
+    <eLiterals name="Humidity" value="2"/>
+    <eLiterals name="Cardiac_frequency" value="3"/>
+    <eLiterals name="Occupancy" value="4"/>
+    <eLiterals name="Pressure" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Data">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="locationType" eType="#//ContainerType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="quantifier" eType="#//Quantifier"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Quantifier">
+    <eLiterals name="All"/>
+    <eLiterals name="Some" value="1"/>
+    <eLiterals name="One" value="2"/>
   </eClassifiers>
 </ecore:EPackage>

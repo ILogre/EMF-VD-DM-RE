@@ -1,0 +1,13 @@
+Catalog WorkingProgress
+Infrastructure :
+Building Templier1
+⌞ Floor Fourth
+  ⌞ Room Office443
+    ⌞ Periodic sensor temp_443 observes SC_Temperature every 2 seconds□
+    
+  ⌞ Room Office444□□□
+
+Observation patterns :
+SC_Temperature with t in range [0...inf]
+					v in range [inf...inf]
+					

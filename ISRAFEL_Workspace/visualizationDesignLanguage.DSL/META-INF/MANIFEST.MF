@@ -5,28 +5,22 @@ Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: visualizationDesignLanguage.DSL; singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.eclipse.xtext;visibility:=reexport,
- org.eclipse.xtext.xbase;resolution:=optional;visibility:=reexport,
- org.eclipse.xtext.generator;resolution:=optional,
- org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional,
- org.eclipse.emf.codegen.ecore;resolution:=optional,
- org.eclipse.emf.mwe.utils;resolution:=optional,
- org.eclipse.emf.mwe2.launch;resolution:=optional,
- visualizationDesignLanguage.Model,
- org.eclipse.xtext.util,
+Require-Bundle: visualizationDesignLanguage.Model,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
  org.eclipse.xtext.xbase.lib,
  org.antlr.runtime,
- org.eclipse.xtext.common.types,
- org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional,
- sensorDeploymentLanguage.Model;bundle-version="0.1.0"
-Import-Package: org.apache.log4j
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: visualizationDesignLanguage.DSL,
- visualizationDesignLanguage.DSL.services,
- visualizationDesignLanguage.DSL.serializer,
- visualizationDesignLanguage.DSL.parser.antlr,
- visualizationDesignLanguage.DSL.parser.antlr.internal,
- visualizationDesignLanguage.DSL.validation,
- visualizationDesignLanguage.DSL.scoping,
- visualizationDesignLanguage.DSL.generator,
- visualizationDesignLanguage.DSL.formatting
+Export-Package: visualizationDesignLanguage.services,
+ visualizationDesignLanguage,
+ visualizationDesignLanguage.parser.antlr,
+ visualizationDesignLanguage.validation,
+ visualizationDesignLanguage.serializer,
+ visualizationDesignLanguage.generator,
+ visualizationDesignLanguage.formatting2,
+ visualizationDesignLanguage.parser.antlr.internal,
+ visualizationDesignLanguage.scoping
+Import-Package: org.apache.log4j
